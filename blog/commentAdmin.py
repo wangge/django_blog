@@ -24,7 +24,7 @@ class CommentAdmin(admin.ModelAdmin):
 
         if not perm:
             self.message_user(request,"您没有审核权限")
-            return 
+            return
         rows_updated = queryset.update(valid='s')
         ##处理事件错误
         if rows_updated == 1:

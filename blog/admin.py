@@ -30,6 +30,7 @@ def export_selected_objects(admin, request, queryset):
     return HttpResponseRedirect("/export/?ct=%s&ids=%s" % (ct.pk, ",".join(selected)))
 
 class BlogAdmin(admin.ModelAdmin):
+
     date_hierarchy = 'pub_date' ## date_hierachy = blog__pub_date
     empty_value_display = "-empty-"
     ordering = ['pub_date']
